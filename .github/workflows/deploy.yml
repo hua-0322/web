@@ -8,16 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./server
+
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        cache: 'npm'
     - name: Install dependencies
-      working-directory: ./server
       run: npm install
     - name: Run tests
-      working-directory: ./server
       run: npm test
