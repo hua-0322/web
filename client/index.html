@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>CMS实时通知大屏</title>
+  <style>
+    .alert {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      background: #d4edda;
+      color: #155724;
+      border-radius: 8px;
+      z-index: 9999;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .publish {
+      margin: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hexa-CMS 实时通知系统</h1>
+  <div id="alertBox"></div>
+
+  <div class="publish">
+    <h3>发布新文章</h3>
+    <input type="text" id="author" placeholder="作者"><br>
+    <input type="text" id="title" placeholder="文章标题"><br>
+    <button onclick="publish()">发布文章</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
